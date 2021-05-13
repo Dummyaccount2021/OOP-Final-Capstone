@@ -49,6 +49,7 @@ namespace BlackJack
             this.optThree = new System.Windows.Forms.RadioButton();
             this.optFour = new System.Windows.Forms.RadioButton();
             this.grpOptions = new System.Windows.Forms.GroupBox();
+            this.optAll = new System.Windows.Forms.RadioButton();
             this.grpPlayerOne.SuspendLayout();
             this.grpPlayer2.SuspendLayout();
             this.grpPlayer3.SuspendLayout();
@@ -108,12 +109,13 @@ namespace BlackJack
             this.grpDealer.Controls.Add(this.btnStand);
             this.grpDealer.Controls.Add(this.btnHit);
             this.grpDealer.Enabled = false;
-            this.grpDealer.Location = new System.Drawing.Point(392, 210);
+            this.grpDealer.Location = new System.Drawing.Point(392, 220);
             this.grpDealer.Name = "grpDealer";
             this.grpDealer.Size = new System.Drawing.Size(283, 416);
             this.grpDealer.TabIndex = 2;
             this.grpDealer.TabStop = false;
             this.grpDealer.Text = "Dealer";
+            this.grpDealer.Enter += new System.EventHandler(this.grpDealer_Enter);
             // 
             // lblBlackJack
             // 
@@ -269,16 +271,29 @@ namespace BlackJack
             // 
             // grpOptions
             // 
+            this.grpOptions.Controls.Add(this.optAll);
             this.grpOptions.Controls.Add(this.optFour);
             this.grpOptions.Controls.Add(this.optOne);
             this.grpOptions.Controls.Add(this.optTwo);
             this.grpOptions.Controls.Add(this.optThree);
             this.grpOptions.Location = new System.Drawing.Point(414, 96);
             this.grpOptions.Name = "grpOptions";
-            this.grpOptions.Size = new System.Drawing.Size(226, 108);
+            this.grpOptions.Size = new System.Drawing.Size(250, 118);
             this.grpOptions.TabIndex = 2;
             this.grpOptions.TabStop = false;
             this.grpOptions.Enter += new System.EventHandler(this.grpOptions_Enter);
+            // 
+            // optAll
+            // 
+            this.optAll.AutoSize = true;
+            this.optAll.Location = new System.Drawing.Point(96, 95);
+            this.optAll.Name = "optAll";
+            this.optAll.Size = new System.Drawing.Size(36, 17);
+            this.optAll.TabIndex = 8;
+            this.optAll.TabStop = true;
+            this.optAll.Text = "All";
+            this.optAll.UseVisualStyleBackColor = true;
+            this.optAll.CheckedChanged += new System.EventHandler(this.optAll_CheckedChanged);
             // 
             // frmBlackJackGame
             // 
@@ -331,6 +346,7 @@ namespace BlackJack
         private System.Windows.Forms.RadioButton optThree;
         private System.Windows.Forms.RadioButton optFour;
         private System.Windows.Forms.GroupBox grpOptions;
+        private System.Windows.Forms.RadioButton optAll;
     }
 }
 

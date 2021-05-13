@@ -17,32 +17,120 @@ namespace BlackJack
         }
         public bool setSuit(string input)
         {
-            //set values for suits
+            switch (input)
+            {
+                case "diamonds":
+                    _suit = input;
+                    return true;
+
+                case "heart":
+                    _suit = input;
+                    return true;
+
+                case "spade":
+                    _suit = input;
+                    return true;
+
+                case "clubs":
+                    _suit = input;
+                    return true;
+
+                default:
+                    return false;
+            }
+
         }
 
         public string getSuit()
         {
-            //return value of suit
+            return _suit;
         }
 
-        public void setValue(string input)
+        public bool setValue(string input)
         {
-            //set values numeric value of a specific card 
+           if(int.TryParse(input, out _))
+           {
+                switch (input)
+                {
+                    case "2":
+                        _value = int.Parse(input);
+                        return true;
+
+                    case "3":
+                        _value = int.Parse(input);
+                        return true;
+
+                    case "4":
+                        _value = int.Parse(input);
+                        return true;
+
+                    case "5":
+                        _value = int.Parse(input);
+                        return true;
+
+                    case "6":
+                        _value = int.Parse(input);
+                        return true;
+
+                    case "7":
+                        _value = int.Parse(input);
+                        return true;
+
+                    case "8":
+                        _value = int.Parse(input);
+                        return true;
+
+                    case "9":
+                        _value = int.Parse(input);
+                        return true;
+
+                    default:
+                        return false;
+                }
+           }
+            return false;
         }
 
         public string getValue()
         {
-            //return numeric value of card as a string 
+            return _value.ToString();
         }
 
-        public void setFace(string input)
+        public bool setFace(string input)
         {
-            //set face value of card
+            
+            switch (input)
+            {
+
+                case "ace":
+                    _face = input;
+                    return true;
+
+                case "jack":
+                    _face = input;
+                    return true;
+
+                case "queen":
+                    _face = input;
+                    return true;
+
+                case "king":
+                    _face = input;
+                    return true;
+
+                case "joker":
+                    _face = input;
+                    return true;
+
+                default:
+                    return false;
+            }
+
         }
 
         public string getFace()
         {
-            //return face value of card as a string
+            return _face;
         }
     }
 }
